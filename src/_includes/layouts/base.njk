@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- Theme layer: swap or override this file to reskin the whole site. -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <!-- Structural layer: layout rules that reference the theme's variables. -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  {% include "partials/header.njk" %}
+
+  <main class="wrap site-main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

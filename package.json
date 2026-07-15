@@ -1,0 +1,14 @@
+{
+  "name": "research-blog",
+  "version": "1.0.0",
+  "description": "A simple, themeable research blog built with Eleventy.",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "new-post": "node scripts/new-post.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

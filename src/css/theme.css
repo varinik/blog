@@ -1,0 +1,52 @@
+/*
+  THEME LAYER
+  -----------
+  This file is the only place color, type, and shape decisions live.
+  Everything in style.css reads from these custom properties instead of
+  hard-coded values, so a new look is a matter of editing this file
+  (or swapping it out entirely) — no hunting through layout rules.
+
+  Current theme: "Soft Spring" — a muted pastel palette meant to feel
+  calm and paper-like rather than glossy or "techy".
+*/
+
+:root {
+  /* ---- Color: base ---- */
+  --color-bg: #fbf8f3;          /* warm cream page background */
+  --color-bg-alt: #f4efe6;      /* slightly deeper cream, for stripes/sections */
+  --color-surface: #ffffff;     /* cards, post body background */
+  --color-border: #ebe2d4;
+
+  /* ---- Color: text ---- */
+  --color-text: #4a4238;        /* soft warm charcoal, never pure black */
+  --color-text-muted: #8c8072;
+  --color-link: #7a9b7e;
+  --color-link-hover: #5e7f63;
+
+  /* ---- Color: pastel accents (spring palette) ---- */
+  --color-sage: #b7d9ba;        /* primary accent */
+  --color-sage-deep: #8fbf95;
+  --color-blush: #f3c9d6;
+  --color-lavender: #d9c9ef;
+  --color-butter: #f9e2a7;
+  --color-sky: #b9dde2;
+
+  /* ---- Type ---- */
+  --font-heading: "Lora", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --line-height-body: 1.7;
+  --line-height-heading: 1.25;
+
+  /* ---- Shape & motion ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 6px 24px rgba(74, 66, 56, 0.06);
+  --transition-fast: 150ms ease;
+
+  /* ---- Layout ---- */
+  --content-width: 720px;
+  --wide-width: 960px;
+}
