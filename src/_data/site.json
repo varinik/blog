@@ -1,6 +1,7 @@
 {
   "title": "Field Notes",
   "description": "Research notes and slow thoughts.",
+  "welcomeMessage": "This is a space for research notes, half-finished thoughts, and things worth writing down as they happen. Edit `welcomeMessage` in src/_data/site.json to change this.",
   "author": "Your Name",
   "url": ""
 }

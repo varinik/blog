@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Static passthroughs — anything in these folders ships as-is.
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
 
   // Posts collection, newest first.

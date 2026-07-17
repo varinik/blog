@@ -125,6 +125,51 @@ a:hover {
   max-width: 55ch;
 }
 
+/* ---- Welcome sign (homepage banner) ---- */
+
+.welcome-sign {
+  margin-bottom: 48px;
+  padding: 40px 44px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-butter) 0%,
+    var(--color-blush) 35%,
+    var(--color-lavender) 70%,
+    var(--color-sky) 100%
+  );
+  background-size: 200% 200%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.welcome-sign__eyebrow {
+  display: inline-block;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.welcome-sign__title {
+  font-size: 2.2rem;
+  margin-bottom: 0.4em;
+  color: var(--color-text);
+}
+
+.welcome-sign__message {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  max-width: 60ch;
+  margin: 0 auto;
+  opacity: 0.85;
+}
+
 /* ---- Post list (cards) ---- */
 
 .post-list {
@@ -148,6 +193,36 @@ a:hover {
 .post-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(74, 66, 56, 0.1);
+}
+
+/* Applied client-side (see js/viewed-posts.js) once a post has been opened. */
+.post-card--visited {
+  opacity: 0.55;
+  filter: grayscale(0.5);
+  box-shadow: none;
+}
+
+.post-card--visited:hover {
+  opacity: 0.8;
+  transform: none;
+}
+
+.post-card--visited .post-card__title a {
+  color: var(--color-text-muted);
+}
+
+.post-card__visited-badge {
+  display: none;
+  margin-left: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.post-card--visited .post-card__visited-badge {
+  display: inline-block;
 }
 
 .post-card__meta {

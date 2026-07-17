@@ -2,17 +2,17 @@
 layout: layouts/base.njk
 title: Home
 ---
-<section class="hero">
-  <span class="hero__eyebrow">Notes from the field</span>
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.description }}</p>
+<section class="welcome-sign">
+  <span class="welcome-sign__eyebrow">Welcome</span>
+  <h1 class="welcome-sign__title">Welcome to {{ site.title }}</h1>
+  <p class="welcome-sign__message">{{ site.welcomeMessage }}</p>
 </section>
 
 {% if collections.posts.length %}
 <ul class="post-list">
   {% for post in collections.posts %}
-  <li class="post-card">
-    <p class="post-card__meta">{{ post.data.date | readableDate }}</p>
+  <li class="post-card" data-url="{{ post.url }}">
+    <p class="post-card__meta">{{ post.data.date | readableDate }}<span class="post-card__visited-badge">Already read</span></p>
     <h2 class="post-card__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
     {% if post.data.excerpt %}<p class="post-card__excerpt">{{ post.data.excerpt }}</p>{% endif %}
     {% if post.data.tags %}

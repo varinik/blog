@@ -17,7 +17,7 @@ later — see [Theming](#theming) below.
 ├── scripts/new-post.js     Helper that scaffolds a new post file
 └── src/
     ├── _data/
-    │   ├── site.json        Site-wide settings (title, description, author)
+    │   ├── site.json        Site-wide settings (title, description, welcome message, author)
     │   └── currentYear.js    Feeds the footer's copyright year
     ├── _includes/
     │   ├── layouts/
@@ -29,6 +29,8 @@ later — see [Theming](#theming) below.
     ├── css/
     │   ├── theme.css          Colors, fonts, spacing tokens — THE theme file
     │   └── style.css          Layout/structure, reads tokens from theme.css
+    ├── js/
+    │   └── viewed-posts.js    Grays out already-read posts on the homepage
     ├── posts/
     │   ├── posts.json         Shared front matter for every post (layout, URL pattern)
     │   └── *.md                Individual posts
@@ -114,6 +116,25 @@ different homepage grid), those changes belong in `style.css` and the
 
 Edit `src/_data/site.json` to change the site title, description, author
 name, and URL — these are used in the header, page titles, and footer.
+
+The homepage also shows a "Welcome to [title]" banner above the post
+list. Its body text comes from the `welcomeMessage` field in the same
+file — edit that to describe what the blog is about.
+
+## Already-read posts are grayed out
+
+`src/js/viewed-posts.js` runs on every page load:
+
+- On a post page, it records that post's URL in the visitor's browser
+  (`localStorage`, key `viewedPosts`).
+- On the homepage, it checks that list and adds a `post-card--visited`
+  class (dimmed + grayscale, with an "Already read" tag) to any post
+  card that's already been opened.
+
+This is per-browser and client-side only — there's no account system or
+server tracking involved, so it resets if the visitor clears site data
+or switches browsers/devices. The styling for it lives in
+`src/css/style.css` under `.post-card--visited`.
 
 ## Notes
 
